@@ -39,10 +39,11 @@ require "db_connect.php";
         </li>
 
       </ul>
-      <h3 class="text-muted"><a href="index.php">SQL-Injection Demo</a></h3>
+      <h3 class="textnav"><a href="index.php" style="color: white;">SQL-Injection Demo</a></h3>
     </div>
     <?php include("mobile-navbar.php"); ?>
 
+    <div class="jumbotron3s">
     <h3 class="text-center"><span class="label label-danger">
         Vulnerable Search</span></h3><br>
 
@@ -110,9 +111,10 @@ require "db_connect.php";
         </div>
       </div>
     </div>
-
+  </div>
 
     <hr>
+    <div class="jumbotron3">
     <div class="row">
       <div class="col-sm-12">
         <h4>Vulnerability:</h4>
@@ -131,6 +133,7 @@ The same result is obtained by using url <a href="books1.php?author='+union+sele
         </div>
       </div>
     </div>
+  </div>
 
     <br>
 

@@ -36,23 +36,21 @@
         </li>
 
       </ul>
-      <h3 class="text-muted"><a href="index.php">SQL-Injection Demo</a></h3>
+      <h3 class="textnav"><a href="index.php" style="color: white;">SQL-Injection Demo</a></h3>
     </div>
     <?php include("mobile-navbar.php"); ?>
 
-    <div class="jumbotron">
-      <h2><strong>SQL Injection Detection and prevention</h2>
+    <div class="jumbotron" style="border-radius: 30px;">
+      <h2 ><strong>SQL Injection Detection and prevention</h2>
       <h3>ISAA Project</h3>
     </div>
     <hr>
-    <div class="jumbotron">
+    <div class="jumbotron2">
       <h2><strong>Team</h2>
-      <ol>
-        <li>Shreyash Vardhan 19BIT0001</li>
-        <li>Ronak Sinha 19BIT0019</li>
-        <li>Rohit K 19BIT0318</li>
-      </ol>
-
+        <h3 style="font: size 90px;">1. Shreyash Vardhan 19BIT0001</h3>
+        <h3 style="font: size 90px;">2. Ronak Sinha 19BIT0019</h3>
+        <h3 style="font: size 90px;">3. Rohit K 19BIT0318</h3>
+      
     </div>
 
 

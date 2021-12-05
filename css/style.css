@@ -2,7 +2,25 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: #1b1b32;
+  background-image: linear-gradient(115deg,
+  rgba(109, 121, 230, 0.685),
+  rgba(192, 202, 241, 0.37)), url('bg.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -15,7 +33,21 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
+  background-color: rgb(18, 53, 117);
+  border-radius: 30px;
 }
+
+.dropdown-toggle {
+  color: white;
+  margin: 10px;
+}
+
+.textnav {
+  padding: 10px;
+  color: white;
+  margin: 15px;
+}
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   padding-bottom: 19px;
@@ -49,7 +81,42 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(104, 133, 230, 0.795);
+  border-radius: 30px;
 }
+
+.jumbotron2 {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(104, 133, 230, 0.795);
+  padding: 14px 24px;
+  font-size: 21px;
+  border-radius: 30px;
+}
+
+.jumbotron3 {
+  background-color: rgba(129, 154, 235, 0.795);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-top:5px ;
+  font-size: 21px;
+  border-radius: 15px;
+}
+.jumbotron3s {
+  align-items: center;
+  background-color: rgba(129, 154, 235, 0.795);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-top:5px ;
+  border-radius: 15px;
+}
+
+.highlight {
+  border-radius: 20px;
+}
+
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;

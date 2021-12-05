@@ -37,10 +37,11 @@ require "db_connect.php";
         </li>
 
       </ul>
-      <h3 class="text-muted"><a href="index.php">SQL-Injection Demo</a></h3>
+      <h3 class="textnav"><a href="index.php" style="color: white;">SQL-Injection Demo</a></h3>
     </div>
     <?php include("mobile-navbar.php"); ?>
-
+    
+    <div class="jumbotron3s">
     <h3 class="text-center"><span class="label label-success">
         Secure Standard Login</span></h3><br>
 
@@ -71,7 +72,8 @@ require "db_connect.php";
           </form>
         </div>
       </div>
-
+    </div>
+    <br>
       <?php
     } else {
       $username = $_POST['username'];
@@ -260,14 +262,10 @@ require "db_connect.php";
             </div>
           </div>
         </div>
-      <?php
+      <?php } 
+    }
+    ?>
 
-        // echo "<p class=\"text-center\">Wrong username/password combination.</p>";
-      }
-      ?>
-
-      <hr>
-    <?php } ?>
     <?php include("footer.php"); ?>
   </div><!-- /container -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

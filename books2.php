@@ -39,33 +39,35 @@ require "db_connect.php";
         </li>
 
       </ul>
-      <h3 class="text-muted"><a href="index.php">SQL-Injection Demo</a></h3>
+      <h3 class="textnav"><a href="index.php" style="color: white;">SQL-Injection Demo</a></h3>
     </div>
     <?php include("mobile-navbar.php"); ?>
 
-    <h3 class="text-center"><span class="label label-success">
-        Secure Search</span></h3><br>
 
-    <div class="row">
-      <div class="col-sm-10">
-        <form class="form-inline" role="form" action="books2.php" method="GET">
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputEmail2">Book title</label>
-            <input type="text" name="title" class="form-control" placeholder="Book title">
-          </div>
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputPassword2">Book author</label>
-            <input type="text" name="author" class="form-control" placeholder="Book author">
-          </div>
-          <button type="submit" class="btn btn-success">Search</button>
-        </form>
-      </div>
-      <div class="col-sm-2">
-        <span class="visible-xs">&nbsp;</span>
-        <a href="books2.php?all=1"><button type="button" class="btn btn-info">All books</button></a>
+    <div class="jumbotron3s">
+      <h3 class="text-center"><span class="label label-success">
+          Secure Search</span></h3><br>
+
+      <div class="row">
+        <div class="col-sm-10">
+          <form class="form-inline" role="form" action="books2.php" method="GET">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputEmail2">Book title</label>
+              <input type="text" name="title" class="form-control" placeholder="Book title">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputPassword2">Book author</label>
+              <input type="text" name="author" class="form-control" placeholder="Book author">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+          </form>
+        </div>
+        <div class="col-sm-2">
+          <span class="visible-xs">&nbsp;</span>
+          <a href="books2.php?all=1"><button type="button" class="btn btn-info">All books</button></a>
+        </div>
       </div>
     </div>
-
     <br>
 
 
@@ -140,7 +142,7 @@ require "db_connect.php";
       {
         $q = 101;
         // Function Call
-        $pat = array("'", "UNION", "select", "from", "#");
+        $pat = array("'", "UNION", "select", "from", "#", "union");
         $len = count($pat);
         for ($i = 0; $i < $len; $i++) {
           if (search($pat[$i], $author, $q) > 0) {
@@ -238,27 +240,7 @@ require "db_connect.php";
             $ipaddress = 'UNKNOWN';
           return $ipaddress;
         }
-      }
-    }
-    if ($query != null) {
-      $result = mysqli_query($connection, $query);
     ?>
-      <table class="table table-bordered">
-        <tr>
-          <th>#ID</th>
-          <th>Title</th>
-          <th>Author</th>
-        </tr>
-        <?php
-        while (($row = mysqli_fetch_row($result)) != null) {
-
-
-
-
-          printf("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", $row[0], $row[1], $row[2]);
-        }
-      } else {
-        ?>
         <div class="row">
           <div class="col-sm-12">
             <div class="highlight">
@@ -274,29 +256,28 @@ require "db_connect.php";
             </div>
           </div>
         </div>
+      <?php }
+    }
+    if ($query != null) {
+      $result = mysqli_query($connection, $query);
+      ?>
+      <table class="table table-bordered">
+        <tr>
+          <th>#ID</th>
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+      <?php
+      while (($row = mysqli_fetch_row($result)) != null) {
 
-      <?php } ?>
 
+
+
+        printf("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", $row[0], $row[1], $row[2]);
+      }
+    }
+      ?>
       </table>
-
-      <hr>
-      <div class="row">
-        <div class="col-sm-12">
-          <h4>Query Executed:</h4>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="highlight">
-            <pre><?= $query ?></pre>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <br>
       <?php include("footer.php"); ?>
   </div><!-- /container -->
 
