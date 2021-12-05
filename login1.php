@@ -9,7 +9,6 @@ require "db_connect.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="SQL Injection demo">
-    <meta name="author" content="Francesco Borzì">
 
     <title>SQL Injection Demo</title>
 
@@ -90,10 +89,6 @@ require "db_connect.php";
 
             if (@$result != NULL and @$result->num_rows > 0) {
                 echo "<p class=\"text-center\">Authenticated as <strong>" . $username . "</strong></p>";
-
-                // ...
-                // $_SESSION['logged_user'] = $username;
-                // ...
             } else {
                 echo "<p class=\"text-center\">Wrong username/password combination.</p>";
             }

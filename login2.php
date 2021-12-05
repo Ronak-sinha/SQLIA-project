@@ -94,9 +94,9 @@ require "db_connect.php";
         $N = strlen($txt);
         $i = 0;
         $j = 0;
-        $p = 0; // hash value 
-        // for pattern
-        $t = 0; // hash value 
+        $p = 0;
+
+        $t = 0; 
         $h = 1;
         $d = 1;
 
